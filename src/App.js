@@ -29,8 +29,9 @@ const slides = [
 
 export default function App() {
   const [index, setIndex] = useState(0);
+  const [showMenu, setShowMenu] = useState(false);
   const changeImage = 500;
-
+  const slide = slides[index];
   const [screenType, setScreenType] = useState(
     window.innerWidth > changeImage ? "desktop" : "mobile"
   );
@@ -44,8 +45,6 @@ export default function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const slide = slides[index];
-
   const prevSlide = () =>
     setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   const nextSlide = () =>
@@ -53,22 +52,32 @@ export default function App() {
 
   return (
     <main>
-      <header className="navbar">
-        <img src="/images/icon-hamburger.svg" alt="hamburger" />
-        <img src="/images/logo.svg" alt="logo" />
-        <navbar>
-          <ul class="nav-links">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#features">Features</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </navbar>
+      <header className="header">
+        <img className="logo" src="/images/logo.svg" alt="logo" />
+
+        {!showMenu && (
+          <img
+            className="hamburger"
+            src="/images/icon-hamburger.svg"
+            alt="hamburger"
+            onClick={() => setShowMenu(true)}
+          />
+        )}
+
+        <nav className={`navbar ${showMenu ? "show" : ""}`}>
+          <img
+            className="hamburger close"
+            src="/images/icon-close.svg"
+            alt="close"
+            onClick={() => setShowMenu(false)}
+          />
+          <div className="nav-links">
+            <a href="#home">home</a>
+            <a href="#shop">shop</a>
+            <a href="#about">about</a>
+            <a href="#contact">contact</a>
+          </div>
+        </nav>
       </header>
 
       <section className="slider">
@@ -129,18 +138,3 @@ export default function App() {
     </main>
   );
 }
-
-// <!-- Home
-// Shop
-// About
-// Contact
-
-// We are available all across the globe
-
-// Shop now
-
-// Manufactured with the best materials
-
-// Shop now
-
-// About our furniture
