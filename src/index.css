@@ -189,6 +189,10 @@ body {
     margin: 0 auto;
   }
 
+  .slider-icon {
+    padding: 1.5rem;
+  }
+
   .navbar {
     position: static;
     transform: none;
