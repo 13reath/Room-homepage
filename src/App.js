@@ -53,7 +53,11 @@ export default function App() {
   return (
     <main>
       <header className="header">
-        <img className="logo" src="/images/logo.svg" alt="logo" />
+        <img
+          className="logo"
+          src={process.env.PUBLIC_URL + "/images/logo.svg"}
+          alt="logo"
+        />
 
         {!showMenu && (
           <img
