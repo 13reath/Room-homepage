@@ -15,7 +15,7 @@ const slides = [
       mobile: "/images/mobile-image-hero-2.jpg",
     },
     title: "We are available all across the globe",
-    text: "With stores all over the world, it's easy for you to find furniture for your home or place of business.Locally, we’re in most major cities throughout the country. Find the branch nearest you using our",
+    text: "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our",
   },
   {
     image: {
@@ -30,7 +30,7 @@ const slides = [
 export default function App() {
   const [index, setIndex] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
-  const changeImage = 500;
+  const changeImage = 600;
   const slide = slides[index];
   const [screenType, setScreenType] = useState(
     window.innerWidth > changeImage ? "desktop" : "mobile"
@@ -101,29 +101,27 @@ export default function App() {
         </div>
       </section>
 
+      <div className="info content">
+        <h2>{slide.title}</h2>
+        <p className="text">{slide.text}</p>
+        <button>
+          Shop Now
+          <img
+            src={process.env.PUBLIC_URL + "/images/icon-arrow.svg"}
+            alt="arrow"
+          />
+        </button>
+      </div>
+
       <section className="section-row">
-        <div className="info content">
-          <h2>About our furniture</h2>
-          <p className="text">
-            We provide unmatched quality, comfort, and style for property owners
-            across the country. Our experts combine form and function in
-            bringing your vision to life. Create a room in your own style with
-            our collection and make your property a reflection of you and what
-            you love.
-          </p>
-        </div>
         <div className="about about-dark">
           <img
             src={process.env.PUBLIC_URL + "/images/image-about-dark.jpg"}
-            alt=""
+            alt="dark furniture"
           />
         </div>
-      </section>
-
-      {/* Второй блок: картинка слева, текст справа */}
-      <section className="section-row reverse">
         <div className="info content">
-          <h2>More about our design</h2>
+          <h2>About our furniture</h2>
           <p className="text">
             Our multifunctional collection blends design and function to suit
             your individual taste. Make each room unique, or pick a cohesive
@@ -136,7 +134,7 @@ export default function App() {
         <div className="about about-light">
           <img
             src={process.env.PUBLIC_URL + "/images/image-about-light.jpg"}
-            alt=""
+            alt="light furniture"
           />
         </div>
       </section>
