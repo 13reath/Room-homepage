@@ -58,7 +58,7 @@ export default function App() {
         {!showMenu && (
           <img
             className="hamburger"
-            src="/images/icon-hamburger.svg"
+            src={process.env.PUBLIC_URL + "/images/icon-hamburger.svg"}
             alt="hamburger"
             onClick={() => setShowMenu(true)}
           />
@@ -88,13 +88,13 @@ export default function App() {
         <div className="slider-icons">
           <img
             className="slider-icon"
-            src="/images/icon-angle-left.svg"
+            src={process.env.PUBLIC_URL + "/images/icon-angle-left.svg"}
             alt="left"
             onClick={prevSlide}
           />
           <img
             className="slider-icon"
-            src="/images/icon-angle-right.svg"
+            src={process.env.PUBLIC_URL + "/images/icon-angle-right.svg"}
             alt="right"
             onClick={nextSlide}
           />
