@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Room-homepage/static/css/main.17a992cf.css",
+    "main.js": "/Room-homepage/static/js/main.7320ab3d.js",
+    "index.html": "/Room-homepage/index.html",
+    "main.17a992cf.css.map": "/Room-homepage/static/css/main.17a992cf.css.map",
+    "main.7320ab3d.js.map": "/Room-homepage/static/js/main.7320ab3d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17a992cf.css",
+    "static/js/main.7320ab3d.js"
+  ]
+}
