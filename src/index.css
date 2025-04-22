@@ -91,28 +91,9 @@ body {
   overflow-wrap: break-word;
 }
 
-.description h1 {
-  font-size: 2rem;
-  line-height: 1.1;
-}
-
 .text {
   color: var(--dark-gray);
   line-height: 1.5;
-}
-
-.description button,
-.description a {
-  background: none;
-  border: none;
-  color: var(--black);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.75rem;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  gap: 0.5rem;
 }
 
 .about img {
@@ -177,5 +158,32 @@ body {
     color: black;
     text-decoration: none;
     font-weight: 600;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    padding: 2rem;
+  }
+  .section-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .slider-icon {
+    padding: 2rem;
+  }
+
+  .about img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .section-row.reverse {
+    direction: rtl;
+  }
+
+  .section-row.reverse > * {
+    direction: ltr;
   }
 }
